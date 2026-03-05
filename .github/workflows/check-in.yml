@@ -1,0 +1,26 @@
+name: "HoYoLAB Auto Daliy Check-In"
+
+on:
+  schedule:
+    - cron: "0 22 * * *"  # scheduled at 06:00 (UTC+8) everyday
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.24.4'
+
+      - name: Run check-in
+        env: 
+          USER_COOKIE: ${{ secrets.USER_COOKIE }}
+          ENABLED_GAMES: ${{ secrets.ENABLED_GAMES }}
+        run: go run main.go
