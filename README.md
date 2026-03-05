@@ -11,8 +11,8 @@ ENABLED_GAMES    {"用户名1": ["gi", "hk3", "hkrpg", "nxx", "zzz"], "用户名
 ```
 
 补充说明：
-1. USER_COOKIE 存储用户 cookie，可以在签到网页抓取，一定要包含 ltoken_v2 和 ltuid_v2 这两个字段。
-2. ENABLED_GAMES 存储需要启用签到的游戏，其中 "gi"、"hk3"、"hkrpg"、"nxx"、"zzz" 依次对应原神、崩坏3、崩坏：星穹铁道、未定事件簿、绝区零。
+1. `USER_COOKIE` 存储用户 cookie，可以在签到网页抓取，一定要包含 `ltoken_v2` 和 `ltuid_v2` 这两个字段。
+2. `ENABLED_GAMES` 存储需要启用签到的游戏，其中 `["gi", "hk3", "hkrpg", "nxx", "zzz"]` 依次对应原神、崩坏3、崩坏：星穹铁道、未定事件簿、绝区零。
 3. 多用户使用 "," 分隔。
 
 ## 输出效果
